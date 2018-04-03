@@ -1,0 +1,82 @@
+<body style="padding-top:20px;background-image:url('/static/images/myorganicstore/back_color.jpg')">
+
+<div class="container">
+   <div class="row">
+
+            <div class="col-lg-12">
+	       <div class="col-lg-7 col-md-4 col-xs-6 thumb">
+<table>
+  <tr><td>
+      <h2><font color="#009300" size="10"> myorganicstore.in </font> </h2>
+  </td></tr>
+<tr> <td>
+  <h4><font color="#bf6000">A healthy Organic food shopping online</font> </h4>
+</td></tr>
+</table>
+	       </div>
+	       
+	        <div class="col-lg-5 col-md-4 col-xs-4 thumb" >
+		  <h6> <i>Welcome </i> <b> <font color="blue"> [% FNAME %] [% LNAME %] </font></b></h6> 
+		  
+		   <a href="index.pl?pg=OrderList" style="background-color:white;padding:8px;"><i class="fa fa-align-justify"></i> Track Orders </a> &nbsp |
+		  		  
+		   
+		  <a href="index.pl?pg=Setting" style="background-color:white;padding:8px;"> <i class="fa fa-cog"></i>Settings&nbsp </a>
+		  &nbsp | &nbsp 
+		  [% IF ORDERS.defined %]
+		       <a href="index.pl?pg=DelOrder" style="background-color:white;padding:8px;">
+			    <i class="fa fa-shopping-cart fa-2x"></i> [% ORDERS %]
+		       </a> &nbsp | &nbsp 
+		       
+		  [% END %]
+		     <a href="#" onclick="javascript:logout('[% SID %]');return false;" style="background-color:white;padding:8px;"><i class="fa fa-sign-out fa-2x"></i> Logout &nbsp </a>
+		</div>  
+	        
+	    </div>
+   </div>
+</div>
+<div class="container">
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation" style="background-color:#00d200">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.pl?pg=Main">Home</a>
+        </div>
+        <div class="navbar-collapse ">
+
+          <!-- Left nav -->
+         <ul class="nav navbar-nav">
+            
+            
+	    <li><a href="#"><b>Products List</b> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+	       [% FOREACH category = categories %]  
+	       <li><a href="#">[% category.categoryName %]<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  [% FOREACH subcategory = category.subCategory %]   
+	             <li><a href="index.pl?pg=itemShow&nm=[% subcategory.subCategoryName %]">[% subcategory.subCategoryName %]</a></li>		
+                  [%   END   %]
+	          </ul>              
+	        </li>	 	               
+               [%   END   %]
+	      
+	      </ul>
+            </li>
+	   
+	   
+	    <li> <a href="index.pl?pg=Contact"><b>Contact </b></a>  </li>
+	   
+          </ul>
+
+        </div><!--/.nav-collapse -->
+	
+	
+	
+      </div>
+         
+        <div class="jumbotron" style="background-color:white;">
+	  [% Bcum %]<br><br>    
+	  [% content %]
+          [% footer %]
+        
+
+      

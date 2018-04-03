@@ -1,0 +1,19 @@
+        
+             <form class="categoriess" role="form">
+	       <div class="form-group">
+		    <label for="sel1">Select Existing Category List:</label>
+		    <select class="form-control" id="categories"> 
+	              [% FOREACH category = categories %]                  
+	             
+	         	  <option name="id_[% category.categoryId %]" id="[% category.categoryId %]" value="[% category.categoryId %]__[% category.categoryName %]"  >[% category.categoryName %]</option>   
+		     
+	                [%   END   %]	      
+	            </select>
+		    <br>
+		    <button type="button" onclick="javascript:getSubCategory( '[% OPT %] ' );return false;"  class="btn btn-md btn-info">Get Sub Category</button>
+	       </div>
+	     </form>
+              <br>
+	     <div id="disp"> </div>
+	  <br><br>
+	

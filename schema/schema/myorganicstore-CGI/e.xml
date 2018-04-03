@@ -1,0 +1,251 @@
+<TOP HASH  Grocery/Grains and Lintels >
+   <TOP HASH  pulses >
+
+       <TOP HASH  Green Gram >
+             <TOP NON-HASH  >
+              20.20=>price
+             <END NON-HASH />
+       <END HASH  Green Gram >
+
+       <TOP HASH  Toor Dal >
+                <TOP NON-HASH  >
+                   20.20=>price
+                 <END NON-HASH />
+      <END HASH  Toor Dal >
+      <TOP HASH  Urad Dal >
+              <TOP NON-HASH  >
+               20.20=>price
+              <END NON-HASH />
+      <END HASH  Urad Dal >
+   
+    <END HASH  pulses >
+<TOP NON-HASH  >
+     Millets
+<END NON-HASH />
+
+<TOP HASH  Grains >
+<TOP HASH  Wheat >
+<TOP NON-HASH  >
+ 20.20=>price
+<END NON-HASH />
+<END HASH  Wheat >
+<TOP HASH  Rice >
+<TOP NON-HASH  >
+ 20.20=>price
+<END NON-HASH />
+<END HASH  Rice >
+<TOP HASH  Raagi >
+<TOP NON-HASH  >
+ 20.20=>price
+<END NON-HASH />
+<END HASH  Raagi >
+<END HASH  Grains >
+<END HASH  Grocery/Grains and Lintels >
+<TOP HASH  Milk Products >
+<TOP NON-HASH  >
+Paneer
+<END NON-HASH />
+<TOP NON-HASH  >
+Ghee
+<END NON-HASH />
+<TOP NON-HASH  >
+Butter
+<END NON-HASH />
+<END HASH  Milk Products >
+<TOP HASH  Vegetables >
+<TOP HASH  Leafy Veggies >
+<TOP HASH  Methi >
+<TOP NON-HASH  >
+ 20.20=>price
+<END NON-HASH />
+<END HASH  Methi >
+<TOP HASH  Spinich >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  Spinich >
+<TOP HASH  Palakh >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  Palakh >
+<END HASH  Leafy Veggies >
+<TOP HASH  Non-Leafy Veggies >
+<TOP HASH  Tomato >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  Tomato >
+<TOP HASH  Ladies Fingre >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  Ladies Fingre >
+<TOP HASH  potato >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  potato >
+<TOP HASH  Carrot >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  Carrot >
+<TOP HASH  Brinjal >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  Brinjal >
+<TOP HASH  raddish >
+<TOP NON-HASH  >
+ 40.40=>price
+<END NON-HASH />
+<END HASH  raddish >
+<END HASH  Non-Leafy Veggies >
+<END HASH  Vegetables >
+<TOP HASH  Sweeteners  >
+<TOP NON-HASH  >
+Honey
+<END NON-HASH />
+<TOP NON-HASH  >
+Jaggery
+<END NON-HASH />
+<TOP NON-HASH  >
+Sugar
+<END NON-HASH />
+<END HASH  Sweeteners  >
+ 
+ 
+<ul class="dropdown-menu"><li><a href="#">Grocery <span class="caret"></span></a>
+<ul class="dropdown-menu"><li><a href="#">Grains<span class="caret"></span></a>
+		  
+                      <ul class="dropdown-menu">	
+			  <li><a href="#">Rice<span class="caret"></span></a>
+                               <ul class="dropdown-menu">
+				 <li>
+				     <a href="index.pl?pg=Prog">  </a>
+				  </li>
+			       </ul>	 
+			  </li>			  
+			  <li><a href="#">Wheat<span class="caret"></span></a>
+			       <ul class="dropdown-menu">
+				 <li>
+				     <a href="index.pl?pg=Prog">
+				         <table class="table">
+					  <tr> <td>
+					   <img src="/static/images/myorganicstore/wheat.jpg" height="100px" width="125px" />
+					  </td></tr>
+					  <tr> <td>
+					     RS 40/- Per Kg 
+					  </td></tr>
+					   
+					 </table>
+					  
+				     </a>
+				  </li>
+			       </ul>	 
+			  </li>
+			  
+			  
+			  <li><a href="#">Raagi<span class="caret"></span></a>
+			       <ul class="dropdown-menu">
+				 <li>
+				     <a href="index.pl?pg=Prog">
+				         <table class="table">
+					  <tr> <td>
+					   <img src="/static/images/myorganicstore/raagi.jpg" height="100px" width="125px" />
+					  </td></tr>
+					  <tr> <td>
+					     RS 25/- Per Kg 
+					  </td></tr>
+					   
+					 </table>
+					  
+				     </a>
+				  </li>
+			       </ul>	 
+			  </li>
+		      </ul>
+		   </li>
+		     
+		     <li><a href="#">Pulses<span class="caret"></span></a>
+		      <ul class="dropdown-menu">
+		          <li><a href="#">Urad dal<span class="caret"></span></a>
+			       <ul class="dropdown-menu">
+				 <li>
+				     <a href="index.pl?pg=Prog">
+				         <table class="table">
+					  <tr> <td>
+					   <img src="/static/images/myorganicstore/urad_dhal.jpg" height="100px" width="125px" />
+					  </td></tr>
+					  <tr> <td>
+					     RS 80/- Per Kg 
+					  </td></tr>
+					   
+					 </table>
+					  
+				     </a>
+				  </li>
+			       </ul>	 
+			  </li>
+			  
+			  
+			   <li><a href="#">Toor dal<span class="caret"></span></a>
+			       <ul class="dropdown-menu">
+				 <li>
+				     <a href="index.pl?pg=Prog">
+				         <table class="table">
+					  <tr> <td>
+					   <img src="/static/images/myorganicstore/toor_dhal.jpg" height="100px" width="125px" />
+					  </td></tr>
+					  <tr> <td>
+					     RS 25/- Per Kg 
+					  </td></tr>
+					   
+					 </table>
+					  
+				     </a>
+				  </li>
+			       </ul>	 
+			  </li>
+			   
+			   
+			    <li><a href="#">Green gram<span class="caret"></span></a>
+			       <ul class="dropdown-menu">
+				 <li>
+				     <a href="index.pl?pg=Prog">
+				         <table class="table">
+					  <tr> <td>
+					   <img src="/static/images/myorganicstore/green_gram.jpg" height="100px" width="125px" />
+					  </td></tr>
+					  <tr> <td>
+					     RS 25/- Per Kg 
+					  </td></tr>
+					   
+					 </table>
+					  
+				     </a>
+				  </li>
+			       </ul>	 
+			  </li>
+		       
+		      </ul>
+		   </li>
+		     <li><a href="index.pl?pg=Script">Millets</a></li>
+                  </ul>
+                </li>
+		
+		 <li><a href="#">Sweetners <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="index.pl?pg=Prog">Jaggery</a></li>
+                    <li><a href="index.pl?pg=Script">Honey</a></li>
+		     <li><a href="index.pl?pg=Script">Sugar</a></li>
+                  </ul>
+                </li>
+		 
+		  <li><a href="#">Milk Products <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="index.pl?pg=Prog">Desi Ghee</a></li>
+                  </ul>
+                </li>
+		   

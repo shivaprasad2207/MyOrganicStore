@@ -1,0 +1,90 @@
+[% IF OPT == 'VIEW' %]
+
+
+             
+	       <div class="form-group">
+		 
+		     <label for="sel1"><i>Below Sub Categories of </i> <u><b> &nbsp <font color="blue"> [% categoryName %] </font> </b></u> </label>
+		     <br>
+	              [% FOREACH scategory = subCategories %]                  
+	             
+	         	  [% scategory.subCategoryName %] <br>   
+		     
+	                [%   END   %]	      
+	       
+	       </div>
+	     
+[% END %]
+
+
+[% IF OPT == 'ADD' %]
+
+               <div class="form-group">
+		 
+		     <label for="sel1"><i>Below Sub Categories of </i> <u><b> &nbsp <font color="blue"> [% categoryName %] </font> </b></u> </label>
+		     <br>
+	              [% FOREACH scategory = subCategories %]                  
+	             
+	         	  [% scategory.subCategoryName %] <br>   
+		     
+	                [%   END   %]	      
+	       
+	       </div>
+	       
+	       <br>
+	       
+             
+	       <div class="col-sm-6 form-group">
+	       <label>Add new sub Category For : <u> <i> <b><font color="blue"> [% categoryName %]</font> </b></i> </u></label>
+		    <input id="subcategory" type="text" value="" >
+			 <button type="button" onclick="javascript:addSubCategory( '[% categoryId %]' );return false;"  class="btn btn-md btn-info">Add</button>
+		</div>
+		    
+	            
+              <br>
+	     
+	  <br><br>
+[% END %]
+
+
+[% IF OPT == 'MOD' %]
+
+               <div class="form-group">
+		 
+		     <label for="sel1"><i>Below Sub Categories of </i> <u><b> &nbsp <font color="blue"> [% categoryName %] </font> </b></u> </label>
+		     <br>
+		    <form id="subcategoriess">
+	              [% FOREACH scategory = subCategories %]                  
+	             
+			 <input name="id_[% scategory.subCategoryId %]" id="[% scategory.subCategoryId %]" type="text" value="[% scategory.subCategoryName %]" > <br> <br>  
+		        [%   END   %]	     	
+		    </form>	
+		    
+		     <button type="button" onclick="javascript:modifySubCategory( );return false;"  class="btn btn-md btn-info">Modify</button>
+	               
+	       
+	       </div>
+	        
+[% END %]
+
+[% IF OPT == 'DEL' %]
+         
+	 <div class="form-group">
+		 
+		     <label for="sel1"><i>Below Sub Categories of </i> <u><b> &nbsp <font color="blue"> [% categoryName %] </font> </b></u> </label>
+		    
+                     <form id="subcategoriess">
+			[% FOREACH scategory = subCategories %]
+		          <input  name="id_[% scategory.subCategoryId %]" id="[% scategory.subCategoryId %]" type="checkbox" value="[% scategory.subCategoryName %]">[% scategory.subCategoryName %]<br><br>   
+		        [%   END   %]	
+		     </form>
+		     
+	  <button type="button" onclick="javascript:deleteSubCategory( );return false;"  class="btn btn-md btn-info">Inactivate </button>
+	 </div>
+
+[% END %]
+
+
+
+
+

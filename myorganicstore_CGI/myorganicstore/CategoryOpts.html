@@ -1,0 +1,56 @@
+        
+	        
+	[% IF VIEW_OPT.defined %]
+	 <label>Existing Category List</label>
+          <ul >
+	       [% FOREACH category = categories %]                  
+	             <li>[% category.categoryName %]</li>		                 	               
+               [%   END   %]	      
+	  </ul>
+	  
+	  
+	  <br><br>
+	  [% END %]
+	
+	
+	[% IF ADD_OPT.defined %]
+	 <label>Existing Category List</label>
+          <ul >
+	       [% FOREACH category = categories %]                  
+	             <li>[% category.categoryName %]</li>		                 	               
+               [%   END   %]	      
+	  </ul>
+	  
+	  
+	  <br><br>
+	  
+	  <div class="col-sm-6 form-group">
+	       <label>Add new Category :</label>
+		    <input id="category" type="text" value="" >
+			 <button type="button" onclick="javascript:addCategory( );return false;"  class="btn btn-md btn-info">Add</button>
+	  </div>
+	  [% END %]
+	  
+	  [% IF MOD_OPT.defined %]
+	  <label>Existing Category List</label>
+	       <form id="categoriess">
+	       [% FOREACH category = categories %]                  
+	             <input name="id_[% category.categoryId %]" id="[% category.categoryId %]" type="text" value="[% category.categoryName %]" > 	<br> <br>                 	               
+               [%   END   %]
+	      
+	       </form>
+	  
+	    <button type="button" onclick="javascript:modifyCategory( );return false;"  class="btn btn-md btn-info">Modify</button>
+	  [% END %]
+	  
+	   [% IF DEL_OPT.defined %]
+	  <label>Existing Category List</label>
+	       <form id="categoriess">
+	       [% FOREACH category = categories %]                  
+	             <input name="id_[% category.categoryId %]" id="[% category.categoryId %]" type="checkbox" value="[% category.categoryId %]" > [% category.categoryName %] 	<br> <br>                 	               
+               [%   END   %]
+	      
+	       </form>
+	  
+	    <button type="button" onclick="javascript:deleteCategory( );return false;"  class="btn btn-md btn-info">Delete</button>
+	  [% END %]

@@ -1,0 +1,70 @@
+<div class="container">
+               
+         
+                <h5 class="page-header"><font color="green"> Order Details of: &nbsp&nbsp <font color="blue"><u> [% orderCode %] </u></font> </font></h5>
+                <h5 class="page-header"><font color="green"> Order Date : &nbsp&nbsp<font color="blue"><u> [% orderDate %] </u></font> </font></h5>
+                <h5 class="page-header"><font color="green"> Order Status : &nbsp&nbsp <font color="blue"><u> [% orderStatus %] </u></font> </font></h5>
+                <h5 class="page-header"><font color="green"> Order Delivery Adress : &nbsp&nbsp<font color="blue"> [% adress %] </font> </font></h5>
+         <table class="table">
+            <tr>
+                <td>
+                   <font color="#bf6000"><b> Product Name </b>  </font>
+                </td>
+                
+                <td>
+                  <font color="#bf6000"> <b> Product Image </b>  </font>
+                </td>
+                 
+                 <td>
+                   <font color="#bf6000"> <b> Product Unit Price </b>  </font>
+                </td>
+                 
+                 <td>
+                   <font color="#bf6000"> <b> Order Quantity </b>  </font>
+                </td>
+                <td>
+                   <font color="#bf6000"> <b> Product Price </b>  </font>
+                </td>
+               
+                
+            </tr>      
+         [% FOREACH order = orders %]   
+                <tr>
+                <td>
+                   [% order.productName %]
+                </td>
+                
+                <td>
+                    <img class="img-responsive" src="[% LDIR %][% order.productImage %] " alt="" height="80px" width="100px">
+                </td>
+                 
+                 <td>
+                    [% order.productUnitPrice %] /- <i class="fa fa-inr"></i> <font SIZE="2"> <i><b> Per [% order.productUnit %] </b></i> </font>
+                </td>
+                 
+                 <td> 
+                    [% order.productQty %]  <font SIZE="2"> <i><b> [% order.productUnit %] </b></i> </font>
+                </td>
+                <td>
+                    [% order.productPrice %] <i class="fa fa-inr">
+                </td>
+               
+                
+            </tr>                                
+        [% END %]
+    
+    
+        <tr>
+            <td colspan="5" >
+               <div style="float:right"><font color="#bf6000"><b> Total</b></font> =<u> [% orderCost %] /- <i class="fa fa-inr"></i></u></div> 
+            </td>
+        </tr>
+         <tr>
+            <td colspan="5" >
+               <div style="float:right"> <a href="#" class="btn btn-danger" role="button" onclick="javascript:cancelPlacedOrder('[% orderCode %]');return false;">Cancel Order</a></div> 
+            </td>
+        </tr>
+   
+       </table>  
+    
+</div>  

@@ -1,0 +1,98 @@
+<body style="padding-top:20px;background-image:url('/static/images/myorganicstore/back_color.jpg')">
+
+<div class="container">
+   <div class="row">
+
+            <div class="col-lg-12">
+	       <div class="col-lg-7 col-md-4 col-xs-6 thumb">
+<table>
+  <tr><td>
+      <h2><font color="#009300" size="10"> myorganicstore.in </font> </h2>
+  </td></tr>
+<tr> <td>
+  <h4><font color="#bf6000">A healthy Organic food shopping online</font> </h4>
+</td></tr>
+</table>
+	       </div>
+	        <div class="col-lg-5 col-md-4 col-xs-4 thumb" >
+		  <h6> <i>Welcome </i> <b> <font color="blue"> [% FNAME %] [% LNAME %] </font></b></h6> 
+		  [% IF !USR.defined %]
+		   <a href="#" style="background-color:white;padding:8px;"> <i class="fa fa-user fa-2x"></i> New User </a> &nbsp |
+		   &nbsp  <a href="#" style="background-color:white;padding:8px;"> <i class="fa fa-sign-in fa-2x"></i> Login  </a> &nbsp | &nbsp 
+		  [% END %]	  
+		   
+		  <a href="index.pl?pg=Setting" style="background-color:white;padding:8px;"> <i class="fa fa-cog"></i>Settings&nbsp </a>
+		  &nbsp | &nbsp 
+		     <a href="#" onclick="javascript:logout('[% SID %]');return false;" style="background-color:white;padding:8px;"><i class="fa fa-sign-out fa-2x"></i> Logout &nbsp </a>
+		</div>  
+	        
+	        
+	    </div>
+   </div>
+</div>
+<div class="container">
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation" style="background-color:#00d200">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="admin.pl?pg=Main">Home</a>
+        </div>
+        <div class="navbar-collapse ">
+
+          <!-- Left nav -->
+          <ul class="nav navbar-nav">
+            
+            
+	    <li><a href="#"><b>Manage Products</b> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+	       
+	       
+	       <li><a href="#">Category<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+		     <li><a href="admin.pl?pg=Category&Op=View">View</a></li> 
+                     <li><a href="admin.pl?pg=Category&Op=Add">Add</a></li>
+		      <li><a href="admin.pl?pg=Category&Op=Mod">Modify</a></li>
+		       <li><a href="admin.pl?pg=Category&Op=Del">Delete</a></li>
+                      
+                  </ul>
+                </li>
+		
+		 <li><a href="#">Sub Category <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+		   <li><a href="admin.pl?pg=sCategory&Op=View">View</a></li> 
+                    <li><a href="admin.pl?pg=sCategory&Op=Add">Add</a></li>
+                    <li><a href="admin.pl?pg=sCategory&Op=Mod">Modify</a></li>
+		     <li><a href="admin.pl?pg=sCategory&Op=Del">Delete</a></li>
+                  </ul>
+                </li>
+		 
+		  <li><a href="#"> Product <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+		     <li><a href="admin.pl?pg=Product&Op=View">View</a></li>
+                    <li><a href="admin.pl?pg=Product&Op=Add">Add</a></li>
+                    <li><a href="admin.pl?pg=Product&Op=Mod">Modify</a></li>
+		     <li><a href="admin.pl?pg=Product&Op=Del">Delete</a></li>
+		     <li><a href="admin.pl?pg=Product&Op=Addp">Add Photo</a></li>
+                  </ul>
+                </li>	               
+              </ul>
+            </li>
+	    
+	   
+	    <li> <a href="index.pl?pg=Main"><b>Application</b></a>  </li>
+	  
+	   
+          </ul>
+
+        </div><!--/.nav-collapse -->
+	
+	
+	
+      </div>
+         
+        <div class="jumbotron" style="background-color:white;">
+	  [% Bcum %]<br><br>    
+	  [% content %]
+          [% footer %]
+        
+
+      

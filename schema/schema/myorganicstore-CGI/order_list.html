@@ -1,0 +1,37 @@
+<h6><font color="blue"> Order List  </font></h6>    
+<div class="container">
+     
+    <div class="col-lg-12">
+    <div class="row">
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        [% FOREACH order = orders %]    
+            <li class="active"><a href="#" onclick="javascript:getOrderDetail('[% order.orderId %]', '[% order.orderCode %]');return false;">[% order.orderCode %]</a></li>
+        [% END %]
+      </ul>
+    </div>
+    
+    
+    <div class="col-md-9">
+   <div id="dispset">
+    
+   
+   </div>
+    </div>
+   
+    </div>
+  </div>
+</div>
+
+  <h6><font color="blue"> Check all  Products ...  </font></h6>      
+ <div class="slider1">
+ [% FOREACH prod = IMAGES %]                  
+  <div class="slide">
+                <a href="index.pl?pg=itemShow&nm=[% prod.subCategoryName %]">
+                                <img src="[% LDIR %][% prod.productImage %]">
+                </a>
+  </div>
+  [% END %]
+</div>
+</div>
+      <br><br><br><br>

@@ -1,0 +1,16 @@
+  <div class="form-group">		 
+       <label for="sel1"><i>Below Sub Categories of </i> <u><b> &nbsp <font color="blue"> [% categoryName %] </font> </b></u> </label>
+		     <br>
+         <form id="form_subcategories">   
+                <select class="form-control" id="subcategories"> 
+	      [% FOREACH scategory = subCategories %]                  
+               
+	        <option name="id_[% scategory.subCategoryId %]" id="[% scategory.subCategoryId %]" value="[% scategory.subCategoryId %]__[% scategory.subCategoryName %]">[% scategory.subCategoryName %]</option>   
+   	       <br> <br>
+	       
+	      [%   END   %]
+		</select>
+		   
+		   </form>	
+		   <button type="button" onclick="javascript:getProductList(  '[% OPT %]' , '[% categoryId %]' );return false;"  class="btn btn-md btn-info">Get Product</button>
+</div>

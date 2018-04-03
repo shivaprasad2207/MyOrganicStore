@@ -1,0 +1,20 @@
+<div class="container">
+                <h4> <u><font color="green"> Order placed.... </font> </u> </h4> 
+     
+              Mail Sent ......
+	      
+	      
+          <br> <br><br> <br><br> <br>
+      
+    <h4><font color="blue"> Check all  Products ...  </font></h4>      
+ <div class="slider1">
+ [% FOREACH prod = IMAGES %]                  
+  <div class="slide">
+                <a href="index.pl?pg=itemShow&nm=[% prod.subCategoryName %]">
+                                <img src="[% LDIR %][% prod.productImage %]">
+                </a>
+  </div>
+  [% END %]
+</div>
+</div>
+      <br><br><br><br>

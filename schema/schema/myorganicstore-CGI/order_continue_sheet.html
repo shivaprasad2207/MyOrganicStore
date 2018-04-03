@@ -1,0 +1,103 @@
+<div class="container">
+        
+         
+                <h4 class="page-header"><font color="green"> Order Details</font></h4>
+     [% IF  NO_ORDERS.defined %]
+                   <br> <br>
+                  <h2 class="page-header"><font color="red"> No Orders Found !...</font></h2>
+     
+     [% ELSE %] 
+         <table class="table">
+            <tr>
+                <td>
+                   <font color="#bf6000"><b> Product Name </b>  </font>
+                </td>
+                
+                <td>
+                  <font color="#bf6000"> <b> Product Image </b>  </font>
+                </td>
+                 
+                 <td>
+                   <font color="#bf6000"> <b> Product Unit Price </b>  </font>
+                </td>
+                 
+                 <td>
+                   <font color="#bf6000"> <b> Order Quantity </b>  </font>
+                </td>
+                <td>
+                   <font color="#bf6000"> <b> Product Price </b>  </font>
+                </td>
+                <td>
+                   <font color="#bf6000"> <b> Action </b> </font>
+                </td>    
+                
+            </tr>      
+         [% FOREACH order = orders %]   
+                <tr>
+                <td>
+                   [% order.productName %]
+                </td>
+                
+                <td>
+                    <img class="img-responsive" src="[% LDIR %][% order.image %] " alt="" height="80px" width="100px">
+                </td>
+                 
+                 <td>
+                    [% order.price %] /- <i class="fa fa-inr"></i> <font SIZE="2"> <i><b> Per [% order.productUnit %] </b></i> </font>
+                </td>
+                 
+                 <td> 
+                    [% order.productQty %]  <font SIZE="2"> <i><b> [% order.productUnit %] </b></i> </font>
+                </td>
+                <td>
+                    [% order.productPrice %] <i class="fa fa-inr">
+                </td>
+                <td>
+                   <a href="index.pl?pg=DelOrder&ProdId=[% order.productId %]"> <i class="fa fa-times fa-2x"></i></a>
+                </td>    
+                
+            </tr>                                
+        [% END %]
+    
+    
+        <tr>
+            <td colspan="5" >
+               <div style="float:right"><font color="#bf6000"><b> Total</b></font> =<u> [% TOTAL %] /- <i class="fa fa-inr"></i></u></div> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" >
+                 <div style="float:right">
+              
+                <table cellspacing="5">
+                                <tr><td>
+               <div ><a href="index.pl?pg=DelAllOrder" class="btn btn-danger" role="button">Cancel Order</a></div>
+               </td>
+                <td>
+                 <div ><a href="index.pl?pg=OrderPlace" class="btn btn-success" role="button">Place Order</a></div> 
+                </td>
+                                </tr>
+                </table>
+            
+            
+                 </div>
+            </td>
+        </tr>
+       </table>  
+       [% END %]
+       
+      <br> <br> <br>
+      
+      <h4><font color="blue"> Check out other Products ...  </font></h4> 
+       
+ <div class="slider1">
+ [% FOREACH prod = IMAGES %]                  
+  <div class="slide">
+                <a href="index.pl?pg=itemShow&nm=[% prod.subCategoryName %]">
+                                <img src="[% LDIR %][% prod.productImage %]">
+                </a>
+  </div>
+  [% END %]
+</div>
+</div>
+      <br><br><br><br>

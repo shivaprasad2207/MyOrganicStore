@@ -1,0 +1,167 @@
+CREATE TABLE myorganicstore.t_adress (
+  userId INT(11) DEFAULT NULL,
+  adress TEXT NOT NULL,
+  adressId INT(11) NOT NULL AUTO_INCREMENT,
+  Active INT(11) NOT NULL,
+  PRIMARY KEY (adressId),
+  CONSTRAINT FK_t_adress_t_user_usr_id FOREIGN KEY (userId)
+    REFERENCES myorganicstore.t_user(usr_id) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 11
+AVG_ROW_LENGTH = 2048
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+CREATE TABLE myorganicstore.t_category (
+  categoryId INT(11) NOT NULL AUTO_INCREMENT,
+  categoryName VARCHAR(50) NOT NULL,
+  Active INT(11) DEFAULT NULL,
+  PRIMARY KEY (categoryId)
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 15
+AVG_ROW_LENGTH = 1365
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+CREATE TABLE myorganicstore.t_orderindex (
+  orderId INT(11) NOT NULL AUTO_INCREMENT,
+  orderCode VARCHAR(255) NOT NULL,
+  userId INT(11) NOT NULL,
+  orderDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  email VARCHAR(50) NOT NULL,
+  sid VARCHAR(255) NOT NULL,
+  addressId INT(11) NOT NULL,
+  orderCost DECIMAL(19, 2) NOT NULL,
+  Active INT(11) NOT NULL,
+  PRIMARY KEY (orderId),
+  CONSTRAINT FK_t_orderindex_t_adress_adressId FOREIGN KEY (addressId)
+    REFERENCES myorganicstore.t_adress(adressId) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT FK_t_orderindex_t_user_email FOREIGN KEY (email)
+    REFERENCES myorganicstore.t_user(email) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT FK_t_orderindex_t_user_usr_id FOREIGN KEY (userId)
+    REFERENCES myorganicstore.t_user(usr_id) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 1
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+CREATE TABLE myorganicstore.t_orderregistry (
+  orderId INT(11) NOT NULL,
+  productId INT(11) NOT NULL,
+  productName VARCHAR(50) NOT NULL,
+  productUnitPrice DECIMAL(19, 2) NOT NULL,
+  productUnit VARCHAR(255) NOT NULL,
+  productPrice DECIMAL(19, 2) NOT NULL,
+  productQty INT(11) NOT NULL,
+  CONSTRAINT FK_t_orderregistry_t_orderindex_orderId FOREIGN KEY (orderId)
+    REFERENCES myorganicstore.t_orderindex(orderId) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT FK_t_orderregistry_t_product_productId FOREIGN KEY (productId)
+    REFERENCES myorganicstore.t_product(productId) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AVG_ROW_LENGTH = 819
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+CREATE TABLE myorganicstore.t_orderstate (
+  orderId INT(11) NOT NULL,
+  orderStatus VARCHAR(255) NOT NULL,
+  changeDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT FK_t_orderstate_t_orderindex_orderId FOREIGN KEY (orderId)
+    REFERENCES myorganicstore.t_orderindex(orderId) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AVG_ROW_LENGTH = 16384
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+CREATE TABLE myorganicstore.t_persession (
+  sid VARCHAR(255) DEFAULT NULL,
+  uid VARCHAR(255) NOT NULL,
+  role VARCHAR(255) NOT NULL,
+  logged_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  is_logged_in BIT(1) DEFAULT NULL,
+  is_logged_out BIT(1) DEFAULT NULL,
+  logged_out TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',
+  orders VARCHAR(255) DEFAULT NULL
+)
+ENGINE = INNODB
+AVG_ROW_LENGTH = 455
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+
+CREATE TABLE myorganicstore.t_product (
+  productId INT(11) NOT NULL AUTO_INCREMENT,
+  productName VARCHAR(50) NOT NULL,
+  subCategoryId INT(11) NOT NULL,
+  productImage VARCHAR(255) DEFAULT NULL,
+  productPrice DECIMAL(19, 2) UNSIGNED NOT NULL,
+  productUnit VARCHAR(255) NOT NULL,
+  Active INT(11) NOT NULL,
+  PRIMARY KEY (productId),
+  CONSTRAINT FK_t_product_t_subcategory_subCategoryId FOREIGN KEY (subCategoryId)
+    REFERENCES myorganicstore.t_subcategory(subCategoryId) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 23
+AVG_ROW_LENGTH = 819
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+CREATE TABLE myorganicstore.t_subcategory (
+  subCategoryId INT(11) NOT NULL AUTO_INCREMENT,
+  subCategoryName VARCHAR(50) NOT NULL,
+  CategoryId INT(11) NOT NULL,
+  Active INT(11) NOT NULL,
+  PRIMARY KEY (subCategoryId),
+  CONSTRAINT FK_t_subcategory_t_category_categoryId FOREIGN KEY (CategoryId)
+    REFERENCES myorganicstore.t_category(categoryId) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 20
+AVG_ROW_LENGTH = 963
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+
+CREATE TABLE myorganicstore.t_subproduct (
+  subProductId INT(11) NOT NULL AUTO_INCREMENT,
+  subProductName VARCHAR(50) NOT NULL,
+  subProductImage VARCHAR(255) NOT NULL,
+  productId INT(11) NOT NULL,
+  PRIMARY KEY (subProductId),
+  CONSTRAINT FK_t_subproduct_t_product_productId FOREIGN KEY (productId)
+    REFERENCES myorganicstore.t_product(productId) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 1
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+
+CREATE TABLE myorganicstore.t_user (
+  firstname VARCHAR(255) NOT NULL,
+  lastname VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  usr_key VARCHAR(255) NOT NULL,
+  adress VARCHAR(255) NOT NULL,
+  phone VARCHAR(255) NOT NULL,
+  role VARCHAR(255) NOT NULL,
+  usr_id INT(11) NOT NULL AUTO_INCREMENT,
+  Active INT(11) DEFAULT NULL,
+  Zip VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (usr_id),
+  UNIQUE INDEX UK_t_user_email (email)
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 15
+AVG_ROW_LENGTH = 3276
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
+
+
+
+

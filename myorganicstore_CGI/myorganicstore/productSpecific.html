@@ -1,0 +1,119 @@
+[% IF OPT == 'VIEW' %]
+
+
+	       <div class="form-group">
+		 
+		     <label for="sel1"><i>Below are Products of </i> <u><b> &nbsp <font color="blue"> [% subCategoryName %] </font> </b></u> </label>
+		     <br>
+	              [% FOREACH product = products %]                  
+	             
+	         	  [% product.productName %] <br>   
+		     
+	                [%   END   %]	      
+	       
+	       </div>
+
+[% END %]
+
+[% IF OPT == 'ADD_PHOTO' %]
+
+                <label for="sel1"><i>Select Product to upload it's Image</i>  </label> 
+	        <form id="form_products">
+		       <select class="form-control" id="products"> 
+	              [% FOREACH product = products %]
+		   <option name="id_[% product.productId %] " id="[% product.productId %]"  value="[% product.productId %]__[% product.productName %]">[% product.productName %]</option>
+		 <br> <br>
+		        [%   END   %]
+		       </select>	
+	         </form>	
+	     <button type="button" onclick="javascript:getImageUploadForm( );return false;"  class="btn btn-md btn-info">Image Upload</button>
+	       </div>
+
+[% END %]
+
+
+[% IF OPT == 'ADD' %]
+
+                <div class="form-group">
+		 
+		     <label for="sel1"><i>Below are Products of </i> <u><b> &nbsp <font color="blue"> [% subCategoryName %] </font> </b></u> </label>
+		     <br>
+	              [% FOREACH product = products %]                  
+	             
+	         	  [% product.productName %] <br>   
+		     
+	                [%   END   %]	      
+	       
+	       </div>
+	       
+	       <br>
+	       
+             
+	       <div class="col-sm-6 form-group">
+	       <label><i>Add new Product For Sub Category  :</i> <u> <i> <b><font color="blue"> [% subCategoryName %]</font> </b></i> </u></label><br>
+		    <label> Product Name :</label> <input id="productName" type="text" value="" ><br><br>
+		    <label> Product Price :</label><input id="productPrice" type="text" value="" ><br><br>
+		    <label> Product Unit :</label>
+		         <select id="productUnit">
+			      <option id="kg" value="kg" name="kg">kg </option>
+			       <option id="gm" value="gm" name="gm"> gm </option>
+			        <option id="lt" value="lt" name="lt"> lt </option>
+			 </select>     
+			      <br><br>
+			 <button type="button" onclick="javascript:addProductOfSubCategory( '[% subCategoryId %]' );return false;"  class="btn btn-md btn-info">Add Product</button>
+		</div>
+		    
+	            
+              <br>
+	     
+	  <br><br>
+[% END %]
+
+
+
+[% IF OPT == 'MOD' %]
+ <div class="form-group">
+		 
+		     <label for="sel1"><i>Below are Products of </i> <u><b> &nbsp <font color="blue"> [% subCategoryName %] </font> </b></u> </label>
+		     <br>     
+			
+	    <form id="Formproduct">   
+                <select class="form-control" id="product"> 
+	          [% FOREACH product = products %]
+	                <option name="id_[% product.productId %]" id="[% product.productId %]" value="[% product.productId %]__[% product.productName %]">[% product.productName %]</option>   
+		         <br> <br>
+		  [%   END   %]
+		</select>		   
+	         <br>
+		  <button type="button" onclick="javascript:getModifyProductForm( '[% OPT %]' );return false;"  class="btn btn-md btn-info">Modify Product</button>
+	    </form>	
+	       
+	       </div>
+	       
+	       <br>
+	       
+         
+	        
+[% END %]
+
+[% IF OPT == 'DEL' %]
+         
+	 <div class="form-group">
+		 
+		     <label for="sel1"><i>Below Sub Categories of </i> <u><b> &nbsp <font color="blue"> [% categoryName %] </font> </b></u> </label>
+		    
+                     <form id="subcategoriess">
+			[% FOREACH scategory = subCategories %]
+		          <input  name="id_[% scategory.subCategoryId %]" id="[% scategory.subCategoryId %]" type="checkbox" value="[% scategory.subCategoryName %]">[% scategory.subCategoryName %]<br><br>   
+		        [%   END   %]	
+		     </form>
+		     
+	  <button type="button" onclick="javascript:deleteSubCategory( );return false;"  class="btn btn-md btn-info">Inactivate </button>
+	 </div>
+
+[% END %]
+
+
+
+
+

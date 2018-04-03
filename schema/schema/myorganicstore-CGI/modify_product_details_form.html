@@ -1,0 +1,22 @@
+    
+	       <div class="col-sm-6 form-group">
+	       <label><i>Change product details  :</i> <u> <i> <b><font color="blue"> [% productName %]</font> </b></i> </u></label><br>
+		    <label> Product Name :</label> <input id="productName" type="text" value="[% productName %]" ><br><br>
+		    <label> Product Price :</label><input id="productPrice" type="text" value="[% price %]" ><br><br>
+		    <label> Current Product Unit :</label><input id="productPrice" type="text" value="[% productUnit %]" ><br><br>
+		    <label> Change Product Unit :</label>
+		         <select id="productUnit">
+			      <option id="kg" value="kg" name="kg">kg </option>
+			       <option id="gm" value="gm" name="gm"> gm </option>
+			        <option id="lt" value="lt" name="lt"> lt </option>
+			 </select>     
+			      <br><br>
+				   <label> Product Image : </label>
+				    <img class="img-responsive" src="[% LDIR %][% image %] " alt="" height="300px" width="200px" ><br>
+			 <button type="button" onclick="javascript:updateProduct( '[% productId %]' );return false;"  class="btn btn-md btn-info">Modify Product</button>
+		</div>
+		    
+	            
+              <br>
+	     
+	  <br><br>

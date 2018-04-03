@@ -1,0 +1,20 @@
+<div class="col-lg-12 well">
+				
+	      	                <table class="table"> 			
+					[% FOREACH ads = OTHER_ADRESS %]		
+					
+						<tr>
+							<td> <textarea id="adrs" rows="3" class="form-control" disabled>[% ads.adress %]</textarea>  </td>
+							<td>  <a href="#" onclick="javascript:delAdress('[% ads.adressId %]');return false;"> <i class="fa fa-times fa-2x"></i></a> </td>
+  
+						</tr> 
+						
+					[% END %] 
+			
+				</table> 		
+						
+						
+						
+	      
+					 
+	</div>
